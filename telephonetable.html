@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Примерный шаблон таблицы актуальный для WordPress (кому надо тот разберется)</title>
+</head>
+<body>
+<table class="phone_table">
+
+<tr><td colspan="5" class="phone_table_heder">Руководство</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM management ORDER BY extension desc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Бухгалтерия</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM accounting ORDER BY extension asc" );
+foreach ( $items as $item ) {
+       echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Отдел продаж</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM sales ORDER BY position desc, extension asc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Отдел закупок</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM purchasing ORDER BY position asc, extension asc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Отдел дорожной разметки</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM executive ORDER BY extension asc");
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Отдел маркетинга</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM marketing ORDER BY extension asc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Склад</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM store ORDER BY position desc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Производство</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM production ORDER BY position desc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Светодиодное производство</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM production_led" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Транспортный отдел</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM transport" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Водители</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM drivers" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Отдел набора персонала</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM hr" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Отдел информационных технологий</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM it ORDER BY extension asc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Отдел разработки 1С</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM prog1c" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Отдел WEB разработки</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM web" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Филиал Санкт-Петербург</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM spb ORDER BY email asc, extension asc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Филиал Краснодар</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM krs ORDER BY extension asc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Филиал Екатеринбург</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM ekb ORDER BY email asc, extension asc, position asc" );
+foreach ( $items as $item ) {
+      echo "<tr><td>$item->name</td><td>$item->position</td><td><a href='tel:$item->extension'>$item->extension</a></td><td><a href='tel:$item->mobile'>$item->mobile</a></td><td><a href='mailto:$item->email'>$item->email</a></td></tr>";
+    }
+?>
+<tr><td colspan="5" class="phone_table_heder">Телефоны регионов без представительств</td></tr>
+<?php
+ $items = $wpdb->get_results( "SELECT * FROM regions_phone ORDER BY name asc" );
+foreach ( $items as $item ) {
+       echo "<tr><td>$item->name</td><<td>$item->extension</td><td> $item->mobile</td></tr>";
+    }
+?>
+</table>
+
+
+
+</body>
+</html>
